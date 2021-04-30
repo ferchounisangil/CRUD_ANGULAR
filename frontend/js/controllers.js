@@ -39,13 +39,13 @@ app.controller('usersController', function($scope, $http){
 		});
 	};
 
-	$scope.showUser = function(id){
+	$scope.showUser = function(identificador){
 		
-		$http.get('http://localhost:8000/api/users' + id).then(function(response){
+		$http.get('http://localhost:8000/api/users/' + identificador).then(function(response){
 			$scope.showNombre = response.data.nombre;
 			$scope.showTelefono = response.data.telefono;
 			$scope.showCiudad = response.data.ciudad;
-			
+			$scope.showId = response.data.id;
 
 		});
 	};
@@ -60,7 +60,7 @@ app.controller('usersController', function($scope, $http){
 			
 		}
 	
-		$http.put('http://localhost:8000/api/users/' + id, dataObj).then(function(response){
+		$http.put('http://localhost:8000/api/users' + id + dataObj).then(function(response){
 			if(response.data.message){
 				$scope.updateUserResponse = response.data;
 			} else {

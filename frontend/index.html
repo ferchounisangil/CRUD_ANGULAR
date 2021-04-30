@@ -65,9 +65,10 @@
                                 <td>{{valor.nombre}}</td>
                                 <td>{{valor.telefono}}</td>
                                 <td>{{valor.ciudad}}</td>
+                                <td>{{valor.id}}</td>
                                 
                                 <td>
-                                    <button class="btn btn-info" data-toggle="modal" data-target="#myModal" ng-click="showUser(valor.id)">Editar</button>
+                                    <button class="btn btn-info" ng-click="showUser(valor.id)" data-toggle="modal" data-target="#myModal" >Editar</button>
                                     <button class="btn btn-danger" ng-click="destroyUser(valor.id)">Eliminar</button>
                                 </td>
                             </tr>
@@ -118,3 +119,8 @@
 </body>
 
 </html>
+
+
+
+
+
